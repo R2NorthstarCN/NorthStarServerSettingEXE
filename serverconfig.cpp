@@ -15,20 +15,20 @@ ServerConfig::ServerConfig()
 
 bool ServerConfig::writeToCfg()
 {
-
+    return true;
 }
 
 bool ServerConfig::readFromCfg()
 {
-
+    return true;
 }
 
 bool ServerConfig::writeToSaveFile()
 {
-
+    return true;
 }
 
 bool ServerConfig::readFromSaveFile()
 {
-
+    return true;
 }

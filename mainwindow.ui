@@ -6,21 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>910</width>
-    <height>352</height>
+    <width>1036</width>
+    <height>412</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>NorthStarCN 服务端设置  By:HK560</string>
+   <string>NorthStar 服务端设置  By:HK560</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>381</width>
-      <height>247</height>
+      <x>30</x>
+      <y>0</y>
+      <width>391</width>
+      <height>331</height>
      </rect>
     </property>
     <property name="title">
@@ -46,7 +46,13 @@
            <property name="minimumSize">
             <size>
              <width>200</width>
-             <height>0</height>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
             </size>
            </property>
           </widget>
@@ -67,7 +73,13 @@
            <property name="minimumSize">
             <size>
              <width>200</width>
-             <height>0</height>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
             </size>
            </property>
           </widget>
@@ -86,7 +98,50 @@
         </layout>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>20</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>20</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="QLabel" name="nsMasterServerHostNameLabel">
+           <property name="text">
+            <string>主服务器MasterServer域名或地址</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="nsMasterServerHostNameEdit">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>tf2cn.wolf109909.top</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_9">
@@ -225,9 +280,9 @@
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>450</x>
       <y>30</y>
-      <width>481</width>
+      <width>461</width>
       <height>221</height>
      </rect>
     </property>
@@ -265,6 +320,12 @@
             <size>
              <width>60</width>
              <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
             </size>
            </property>
            <property name="maximum">
@@ -305,6 +366,12 @@
             <size>
              <width>60</width>
              <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
             </size>
            </property>
            <property name="minimum">
@@ -350,6 +417,12 @@
              <height>0</height>
             </size>
            </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="minimum">
             <number>1</number>
            </property>
@@ -368,7 +441,7 @@
          <item>
           <widget class="QLabel" name="baseTickintervalMpLabel">
            <property name="text">
-            <string>Tick延迟（1除以该值得到刷新率tick）</string>
+            <string>Tick间的延迟</string>
            </property>
           </widget>
          </item>
@@ -393,6 +466,12 @@
              <height>0</height>
             </size>
            </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="decimals">
             <number>7</number>
            </property>
@@ -406,7 +485,7 @@
             <double>0.010000000000000</double>
            </property>
            <property name="value">
-            <double>0.016666000000000</double>
+            <double>0.016667000000000</double>
            </property>
           </widget>
          </item>
@@ -440,6 +519,12 @@
             <size>
              <width>60</width>
              <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
             </size>
            </property>
            <property name="minimum">
@@ -485,6 +570,12 @@
              <height>0</height>
             </size>
            </property>
+           <property name="maximumSize">
+            <size>
+             <width>60</width>
+             <height>16777215</height>
+            </size>
+           </property>
            <property name="readOnly">
             <bool>true</bool>
            </property>
@@ -495,7 +586,7 @@
             <number>99999</number>
            </property>
            <property name="value">
-            <number>99</number>
+            <number>300</number>
            </property>
           </widget>
          </item>
@@ -576,54 +667,70 @@
    <widget class="QPushButton" name="applyBtn">
     <property name="geometry">
      <rect>
-      <x>460</x>
-      <y>270</y>
-      <width>111</width>
-      <height>24</height>
+      <x>470</x>
+      <y>300</y>
+      <width>191</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string>应用到北极星配置</string>
+     <string>应用到北极星服务端配置</string>
+    </property>
+    <property name="autoRepeat">
+     <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="resetBtn">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>270</y>
-      <width>80</width>
-      <height>24</height>
+      <x>680</x>
+      <y>300</y>
+      <width>106</width>
+      <height>56</height>
      </rect>
     </property>
-    <property name="text">
-     <string>恢复默认设置</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_9">
+     <item>
+      <widget class="QPushButton" name="saveConfigBtn">
+       <property name="text">
+        <string>保存设置</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="loadConfigBtn">
+       <property name="text">
+        <string>读取已保存的设置</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
-   <widget class="QPushButton" name="switchNameBtn">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>270</y>
-      <width>80</width>
-      <height>24</height>
+      <x>760</x>
+      <y>10</y>
+      <width>168</width>
+      <height>26</height>
      </rect>
     </property>
-    <property name="text">
-     <string>切换配置项名</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="loadConfigBtn">
-    <property name="geometry">
-     <rect>
-      <x>719</x>
-      <y>270</y>
-      <width>101</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>读取保存的配置</string>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_10">
+     <item>
+      <widget class="QPushButton" name="switchNameBtn">
+       <property name="text">
+        <string>切换配置项名</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="resetBtn">
+       <property name="text">
+        <string>恢复默认设置</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -631,7 +738,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>910</width>
+     <width>1036</width>
      <height>21</height>
     </rect>
    </property>
