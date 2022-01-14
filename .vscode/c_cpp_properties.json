@@ -1,0 +1,26 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:\\Qt\\Qt5.12.12\\5.12.12\\msvc2017_64\\include",
+                "D:\\Qt\\Qt5.12.12\\5.12.12\\msvc2017_64\\include\\QtGui",
+                "D:\\Qt\\Qt5.12.12\\5.12.12\\msvc2017_64\\include\\QtWidgets",
+                "D:\\Qt\\Qt5.12.12\\5.12.12\\msvc2017_64\\include\\QtDesigner",
+                "D:\\Qt\\Qt5.12.12\\5.12.12\\msvc2017_64\\include\\QtCore"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "D:/VisualStudio2022IDE/VC/Tools/MSVC/14.31.30818/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}
