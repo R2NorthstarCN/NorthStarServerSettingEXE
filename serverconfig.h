@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 19:06:51
- * @LastEditTime: 2022-01-14 21:23:21
+ * @LastEditTime: 2022-01-16 13:25:40
  * @LastEditors: HK560
  * @Description:
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.h
@@ -11,16 +11,18 @@
 #define SERVERCONFIG_H
 #include<QString>
 #include<QVector>
-
-
+#include<QFileInfo>
+#include<QStringList>
+#include<qDebug>
+#include<QTextCodec>
 class ServerConfig {
    public:
    ServerConfig();
-
-   bool writeToCfg();//写入到autoexec_ns_server.cfg
-   bool readFromCfg();//读取autoexec_ns_server.cfg
-   bool writeToSaveFile();//写入到保存的配置文件
-   bool readFromSaveFile();//读入到保存的配置文件
+   
+   bool writeToCfg(QFileInfo file);//写入到autoexec_ns_server.cfg
+   bool readFromCfg(QFileInfo file);//读取autoexec_ns_server.cfg
+   bool writeToSaveFile(QFileInfo file);//写入到保存的配置文件
+   bool readFromSaveFile(QFileInfo file);//读入到保存的配置文件
 
    
    // 写入配置文件的信息
@@ -52,4 +54,27 @@ class ServerConfig {
    bool host_skip_client_dll_crc=true; // allow people to run modded client dlls, this is mainly so people running pilot visor colour mods can keep those, since they use a client.dll edit
 };
 
+
+const QStringList cliList={
+      "ns_server_name",
+      "ns_server_desc",
+      "ns_server_password",
+      "ns_report_server_to_masterserver",
+      "ns_report_sp_server_to_masterserver",
+      "ns_auth_allow_insecure",
+      "ns_erase_auth_info",
+      "ns_player_auth_port",
+      "ns_masterserver_hostname",
+      "everything_unlocked",
+      "ns_should_return_to_lobby",
+      "net_chan_limit_mode",
+      "net_chan_limit_msec_per_sec",
+      "sv_querylimit_per_sec",
+      "base_tickinterval_mp",
+      "sv_updaterate_mp",
+      "sv_minupdaterate",
+      "sv_max_snapshots_multiplayer",
+      "net_data_block_enabled",
+      "host_skip_client_dll_crc"
+   };
 #endif  // SERVERCONFIG_H
