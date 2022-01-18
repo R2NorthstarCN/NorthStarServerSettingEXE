@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 16:28:21
- * @LastEditTime: 2022-01-16 13:08:19
+ * @LastEditTime: 2022-01-18 12:50:44
  * @LastEditors: HK560
  * @Description: 
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\mainwindow.h
@@ -35,6 +35,9 @@ public:
     ~MainWindow();
 
 private:
+    void init();    
+    bool setConfigToGui();
+
     Ui::MainWindow *ui;
     ServerConfig *config;
     QFileInfo cfgFile;

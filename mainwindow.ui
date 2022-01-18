@@ -62,14 +62,14 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
-          <widget class="QLabel" name="serverDescLabel_2">
+          <widget class="QLabel" name="serverPasswordLabel">
            <property name="text">
             <string>服务器密码(留空则为无)</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="serverDescEdit_2">
+          <widget class="QLineEdit" name="serverPasswordEdit">
            <property name="minimumSize">
             <size>
              <width>200</width>
@@ -95,23 +95,23 @@
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QLineEdit" name="serverDescEdit">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+         </item>
         </layout>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineEdit">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-        </widget>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_8">
@@ -137,7 +137,7 @@
             </size>
            </property>
            <property name="text">
-            <string>tf2cn.wolf109909.top</string>
+            <string/>
            </property>
           </widget>
          </item>
@@ -213,7 +213,7 @@
           <string>解锁所有物品</string>
          </property>
          <property name="checked">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -223,7 +223,7 @@
           <string>每局结束返回大厅</string>
          </property>
          <property name="checked">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -609,7 +609,7 @@
           <string>报告给主服务器</string>
          </property>
          <property name="checked">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -633,7 +633,7 @@
           <string>自动清除验证信息</string>
          </property>
          <property name="checked">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -643,7 +643,7 @@
           <string>跳过cilent.dll验证</string>
          </property>
          <property name="checked">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -680,7 +680,7 @@
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>680</x>
@@ -706,7 +706,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>760</x>
