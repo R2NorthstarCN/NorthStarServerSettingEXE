@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 19:06:51
- * @LastEditTime: 2022-01-16 13:25:40
+ * @LastEditTime: 2022-01-18 12:11:36
  * @LastEditors: HK560
  * @Description:
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.h
@@ -15,15 +15,19 @@
 #include<QStringList>
 #include<qDebug>
 #include<QTextCodec>
+#include <QRegularExpression>
+#include <QRegExp>
+#include<QMap>
 class ServerConfig {
    public:
    ServerConfig();
+   QMap<QString,QString> cliMap;
    
    bool writeToCfg(QFileInfo file);//写入到autoexec_ns_server.cfg
    bool readFromCfg(QFileInfo file);//读取autoexec_ns_server.cfg
    bool writeToSaveFile(QFileInfo file);//写入到保存的配置文件
    bool readFromSaveFile(QFileInfo file);//读入到保存的配置文件
-
+   bool setConfigValue(QString name,QString value);
    
    // 写入配置文件的信息
    QString ns_server_name="[CN]Server";//服务器名称
@@ -77,4 +81,8 @@ const QStringList cliList={
       "net_data_block_enabled",
       "host_skip_client_dll_crc"
    };
+
+
+
 #endif  // SERVERCONFIG_H
+
