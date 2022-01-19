@@ -13,7 +13,7 @@
 #define NS_SERVERCONFIG_TITLE "NorthStarCN ServerConfig \t"
 #define NS_CONFIG_PATH "./R2Northstar/mods/Northstar.CustomServers/mod/cfg/autoexec_ns_server.cfg"
 #define NS_CONFIG_TEST_PATH "autoexec_ns_server.cfg"
-
+#define NS_EXECONFIG_PATH "/NS_SERVER_CONFIG.ini"
 
 #include <QMainWindow>
 #include<QFile>
@@ -43,6 +43,8 @@ private slots:
 
     void on_resetBtn_clicked();
 
+    void on_saveConfigBtn_clicked();
+
 private:
     void init();    
     bool setConfigToGui();//读取config的climap配置到gui
@@ -51,5 +53,6 @@ private:
     Ui::MainWindow *ui;
     ServerConfig *config;
     QFileInfo cfgFile;
+    QFileInfo exeCfgFile;
 };
 #endif // MAINWINDOW_H

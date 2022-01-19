@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 19:06:51
- * @LastEditTime: 2022-01-19 10:29:00
+ * @LastEditTime: 2022-01-19 11:13:02
  * @LastEditors: HK560
  * @Description:
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.h
@@ -18,6 +18,8 @@
 #include <QRegularExpression>
 #include <QRegExp>
 #include<QMap>
+#include<QSettings>
+
 class ServerConfig {
    public:
    ServerConfig();
@@ -64,28 +66,28 @@ class ServerConfig {
 };
 
 
-// const QStringList cliList={
-//       "ns_server_name",
-//       "ns_server_desc",
-//       "ns_server_password",
-//       "ns_report_server_to_masterserver",
-//       "ns_report_sp_server_to_masterserver",
-//       "ns_auth_allow_insecure",
-//       "ns_erase_auth_info",
-//       "ns_player_auth_port",
-//       "ns_masterserver_hostname",
-//       "everything_unlocked",
-//       "ns_should_return_to_lobby",
-//       "net_chan_limit_mode",
-//       "net_chan_limit_msec_per_sec",
-//       "sv_querylimit_per_sec",
-//       "base_tickinterval_mp",
-//       "sv_updaterate_mp",
-//       "sv_minupdaterate",
-//       "sv_max_snapshots_multiplayer",
-//       "net_data_block_enabled",
-//       "host_skip_client_dll_crc"
-//    };
+const QStringList cliStringList={
+      "ns_server_name",
+      "ns_server_desc",
+      "ns_server_password",
+      // "ns_report_server_to_masterserver",
+      // "ns_report_sp_server_to_masterserver",
+      // "ns_auth_allow_insecure",
+      // "ns_erase_auth_info",
+      // "ns_player_auth_port",
+      "ns_masterserver_hostname",
+      // "everything_unlocked",
+      // "ns_should_return_to_lobby",
+      // "net_chan_limit_mode",
+      // "net_chan_limit_msec_per_sec",
+      // "sv_querylimit_per_sec",
+      // "base_tickinterval_mp",
+      // "sv_updaterate_mp",
+      // "sv_minupdaterate",
+      // "sv_max_snapshots_multiplayer",
+      // "net_data_block_enabled",
+      // "host_skip_client_dll_crc"
+   };
 
 
 
