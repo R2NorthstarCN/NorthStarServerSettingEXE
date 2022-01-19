@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1036</width>
-    <height>412</height>
+    <width>1025</width>
+    <height>409</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>30</x>
       <y>0</y>
-      <width>391</width>
-      <height>331</height>
+      <width>331</width>
+      <height>351</height>
      </rect>
     </property>
     <property name="title">
@@ -45,7 +45,7 @@
           <widget class="QLineEdit" name="serverNameEdit">
            <property name="minimumSize">
             <size>
-             <width>200</width>
+             <width>110</width>
              <height>20</height>
             </size>
            </property>
@@ -72,7 +72,7 @@
           <widget class="QLineEdit" name="serverPasswordEdit">
            <property name="minimumSize">
             <size>
-             <width>200</width>
+             <width>110</width>
              <height>20</height>
             </size>
            </property>
@@ -99,7 +99,7 @@
           <widget class="QLineEdit" name="serverDescEdit">
            <property name="minimumSize">
             <size>
-             <width>0</width>
+             <width>110</width>
              <height>20</height>
             </size>
            </property>
@@ -118,7 +118,7 @@
          <item>
           <widget class="QLabel" name="nsMasterServerHostNameLabel">
            <property name="text">
-            <string>主服务器MasterServer域名或地址</string>
+            <string>主服务器(MS)地址</string>
            </property>
           </widget>
          </item>
@@ -126,7 +126,7 @@
           <widget class="QLineEdit" name="nsMasterServerHostNameEdit">
            <property name="minimumSize">
             <size>
-             <width>0</width>
+             <width>110</width>
              <height>20</height>
             </size>
            </property>
@@ -148,7 +148,7 @@
          <item>
           <widget class="QLabel" name="nsPlayerAuthPortLabel">
            <property name="text">
-            <string>服务器验证端口（TCP）</string>
+            <string>服务器验证端口</string>
            </property>
           </widget>
          </item>
@@ -195,6 +195,13 @@
           </size>
          </property>
         </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>*中文会自动转为utf8编码</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
@@ -280,423 +287,432 @@
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>30</y>
-      <width>461</width>
-      <height>221</height>
+      <x>370</x>
+      <y>20</y>
+      <width>451</width>
+      <height>331</height>
      </rect>
     </property>
     <property name="title">
      <string>高级设置（不知道是什么就保持默认）</string>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_4">
+    <layout class="QVBoxLayout" name="verticalLayout_12">
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_7">
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <layout class="QVBoxLayout" name="verticalLayout_7">
          <item>
-          <widget class="QLabel" name="netChanLimitModeLabel">
-           <property name="text">
-            <string>网络通道处理模式</string>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLabel" name="netChanLimitModeLabel">
+             <property name="text">
+              <string>网络通道处理模式</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="netChanLimitModeSpinBox">
+             <property name="minimumSize">
+              <size>
+               <width>60</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>60</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="maximum">
+              <number>2</number>
+             </property>
+             <property name="value">
+              <number>2</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <spacer name="horizontalSpacer_3">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="netChanLimitMsecLabel">
+             <property name="text">
+              <string>网络通道处理时间限制(ms)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="netChanLimitMsecSpinBox">
+             <property name="minimumSize">
+              <size>
+               <width>60</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>60</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>9999</number>
+             </property>
+             <property name="value">
+              <number>100</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
-          <widget class="QSpinBox" name="netChanLimitModeSpinBox">
-           <property name="minimumSize">
-            <size>
-             <width>60</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>60</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="maximum">
-            <number>2</number>
-           </property>
-           <property name="value">
-            <number>2</number>
-           </property>
-          </widget>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="svQuerylimitPerSecLabel">
+             <property name="text">
+              <string>sv_querylimit_per_sec</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="svQuerylimitPerSecSpinBox">
+             <property name="minimumSize">
+              <size>
+               <width>60</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>60</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>9999</number>
+             </property>
+             <property name="value">
+              <number>15</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <widget class="QLabel" name="baseTickintervalMpLabel">
+             <property name="text">
+              <string>Tick间的延迟</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="baseTickintervalMpSpinBox">
+             <property name="minimumSize">
+              <size>
+               <width>60</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>60</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="decimals">
+              <number>7</number>
+             </property>
+             <property name="minimum">
+              <double>0.010000000000000</double>
+             </property>
+             <property name="maximum">
+              <double>999999.000000000000000</double>
+             </property>
+             <property name="singleStep">
+              <double>0.010000000000000</double>
+             </property>
+             <property name="value">
+              <double>0.016667000000000</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_7">
+           <item>
+            <widget class="QLabel" name="svUpdaterateMpLabel">
+             <property name="text">
+              <string>每秒传输信息最大次数</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="svUpdaterateMpSpinBox">
+             <property name="minimumSize">
+              <size>
+               <width>60</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>60</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="minimum">
+              <number>1</number>
+             </property>
+             <property name="maximum">
+              <number>999999</number>
+             </property>
+             <property name="value">
+              <number>20</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <widget class="QLabel" name="svMaxSnapshotsMultiplayerLabel">
+             <property name="text">
+              <string>sv_max_snapshots_multiplayer</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_7">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="svMaxSnapshotsMultiplayerSpinBox">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>60</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>60</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="minimum">
+              <number>15</number>
+             </property>
+             <property name="maximum">
+              <number>99999</number>
+             </property>
+             <property name="value">
+              <number>300</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLabel" name="netChanLimitMsecLabel">
-           <property name="text">
-            <string>网络通道处理时间限制(ms)</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="netChanLimitMsecSpinBox">
-           <property name="minimumSize">
-            <size>
-             <width>60</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>60</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>9999</number>
-           </property>
-           <property name="value">
-            <number>100</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+        </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <layout class="QVBoxLayout" name="verticalLayout_6">
          <item>
-          <widget class="QLabel" name="svQuerylimitPerSecLabel">
+          <widget class="QCheckBox" name="reportServerToMSCheckbox">
            <property name="text">
-            <string>sv_querylimit_per_sec</string>
+            <string>报告给主服务器</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
            </property>
           </widget>
          </item>
          <item>
-          <spacer name="horizontalSpacer_4">
+          <widget class="QCheckBox" name="reportServerToMSinSPCheckbox">
+           <property name="text">
+            <string>单人模式下报告给主服务器</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="nsAuthAllowInsecureCheckBox">
+           <property name="text">
+            <string>玩家不需要与主服务器验证</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="nsEraseAuthInfoCheckBox">
+           <property name="text">
+            <string>自动清除验证信息</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="hostSkipClientDllCrcCheckBox">
+           <property name="text">
+            <string>跳过cilent.dll验证</string>
+           </property>
+           <property name="checked">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_4">
            <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+            <enum>Qt::Vertical</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>40</width>
-             <height>20</height>
+             <width>20</width>
+             <height>40</height>
             </size>
            </property>
           </spacer>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="svQuerylimitPerSecSpinBox">
-           <property name="minimumSize">
-            <size>
-             <width>60</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>60</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>9999</number>
-           </property>
-           <property name="value">
-            <number>15</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_6">
-         <item>
-          <widget class="QLabel" name="baseTickintervalMpLabel">
-           <property name="text">
-            <string>Tick间的延迟</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_5">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QDoubleSpinBox" name="baseTickintervalMpSpinBox">
-           <property name="minimumSize">
-            <size>
-             <width>60</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>60</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="decimals">
-            <number>7</number>
-           </property>
-           <property name="minimum">
-            <double>0.010000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>999999.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.010000000000000</double>
-           </property>
-           <property name="value">
-            <double>0.016667000000000</double>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
-         <item>
-          <widget class="QLabel" name="svUpdaterateMpLabel">
-           <property name="text">
-            <string>每秒传输信息最大次数</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_6">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="svUpdaterateMpSpinBox">
-           <property name="minimumSize">
-            <size>
-             <width>60</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>60</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="minimum">
-            <number>1</number>
-           </property>
-           <property name="maximum">
-            <number>999999</number>
-           </property>
-           <property name="value">
-            <number>20</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
-         <item>
-          <widget class="QLabel" name="svMaxSnapshotsMultiplayerLabel">
-           <property name="text">
-            <string>sv_max_snapshots_multiplayer</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_7">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="svMaxSnapshotsMultiplayerSpinBox">
-           <property name="minimumSize">
-            <size>
-             <width>60</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>60</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-           <property name="minimum">
-            <number>15</number>
-           </property>
-           <property name="maximum">
-            <number>99999</number>
-           </property>
-           <property name="value">
-            <number>300</number>
-           </property>
-          </widget>
          </item>
         </layout>
        </item>
       </layout>
      </item>
      <item>
-      <widget class="Line" name="line_3">
+      <widget class="Line" name="line_4">
        <property name="orientation">
-        <enum>Qt::Vertical</enum>
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>
      <item>
-      <layout class="QVBoxLayout" name="verticalLayout_6">
+      <layout class="QVBoxLayout" name="verticalLayout_11">
        <item>
-        <widget class="QCheckBox" name="reportServerToMSCheckbox">
+        <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>报告给主服务器</string>
-         </property>
-         <property name="checked">
-          <bool>false</bool>
+          <string>其他参数配置：</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="reportServerToMSinSPCheckbox">
-         <property name="text">
-          <string>单人模式下报告给主服务器</string>
+        <widget class="QTextEdit" name="otherCliEdit">
+         <property name="lineWrapMode">
+          <enum>QTextEdit::NoWrap</enum>
          </property>
         </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="nsAuthAllowInsecureCheckBox">
-         <property name="text">
-          <string>玩家不需要与主服务器验证</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="nsEraseAuthInfoCheckBox">
-         <property name="text">
-          <string>自动清除验证信息</string>
-         </property>
-         <property name="checked">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="hostSkipClientDllCrcCheckBox">
-         <property name="text">
-          <string>跳过cilent.dll验证</string>
-         </property>
-         <property name="checked">
-          <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="verticalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
        </item>
       </layout>
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="applyToNSBtn">
-    <property name="geometry">
-     <rect>
-      <x>470</x>
-      <y>300</y>
-      <width>200</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>应用到北极星服务端配置</string>
-    </property>
-    <property name="autoRepeat">
-     <bool>false</bool>
-    </property>
-   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>680</x>
-      <y>300</y>
+      <x>850</x>
+      <y>170</y>
       <width>106</width>
       <height>56</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_9">
-     <item>
-      <widget class="QPushButton" name="saveConfigBtn">
-       <property name="text">
-        <string>保存设置</string>
-       </property>
-      </widget>
-     </item>
      <item>
       <widget class="QPushButton" name="loadConfigBtn">
        <property name="text">
@@ -704,13 +720,20 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="saveConfigBtn">
+       <property name="text">
+        <string>保存设置</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>760</x>
-      <y>10</y>
+      <x>840</x>
+      <y>240</y>
       <width>168</width>
       <height>26</height>
      </rect>
@@ -718,8 +741,17 @@
     <layout class="QHBoxLayout" name="horizontalLayout_10">
      <item>
       <widget class="QPushButton" name="switchNameBtn">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>切换配置项名</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+       <property name="autoDefault">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -732,18 +764,40 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="readNSconfigBtn">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>260</y>
-      <width>200</width>
-      <height>25</height>
+      <x>840</x>
+      <y>70</y>
+      <width>154</width>
+      <height>85</height>
      </rect>
     </property>
-    <property name="text">
-     <string>读取目前北极星服务端配置</string>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_10">
+     <item>
+      <widget class="QPushButton" name="readNSconfigBtn">
+       <property name="text">
+        <string>读取目前北极星服务端配置</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="applyToNSBtn">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>应用到北极星服务端配置</string>
+       </property>
+       <property name="autoRepeat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -751,7 +805,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1036</width>
+     <width>1025</width>
      <height>21</height>
     </rect>
    </property>

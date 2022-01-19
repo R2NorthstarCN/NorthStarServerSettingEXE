@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 19:06:51
- * @LastEditTime: 2022-01-19 15:55:57
+ * @LastEditTime: 2022-01-19 17:12:40
  * @LastEditors: HK560
  * @Description:
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.h
@@ -26,14 +26,16 @@ class ServerConfig {
    ServerConfig();
    
    QMap<QString,QString> cliMap;
-   
+   QString otherCli;
+
    bool writeToCfg();//写入到autoexec_ns_server.cfg
    bool readFromCfg();//读取autoexec_ns_server.cfg
    bool writeToSaveFile(QFileInfo file);//写入到保存的配置文件
    bool readFromSaveFile(QFileInfo file);//读入到保存的配置文件
-   bool setConfigValue(QString name,QString value);
-   void setFilePath(QFileInfo path);
-   void configReset();
+   bool setConfigValue(QString name,QString value);//设置参数值
+   void setFilePath(QFileInfo path);//设置cfg文件路径
+   void configReset();//恢复默认设置
+   void setOtherConfigValue(QString text);//设置其他参数
    // 写入配置文件的信息
    // QString ns_server_name="[CN]Server";//服务器名称
    // QString ns_server_desc="Welcome everyone";//服务器描述
@@ -63,10 +65,10 @@ class ServerConfig {
    // bool host_skip_client_dll_crc=true; // allow people to run modded client dlls, this is mainly so people running pilot visor colour mods can keep those, since they use a client.dll edit
    
    private:
-   QFileInfo filePath;
+   QFileInfo filePath;//cfg文件路径
 };
 
-
+//描述为是字符串参数的参数命令
 const QStringList cliStringList={
       "ns_server_name",
       "ns_server_desc",
@@ -90,7 +92,7 @@ const QStringList cliStringList={
       // "host_skip_client_dll_crc"
    };
 
-QByteArray uEncodeSymbol(QString resStr);
+QByteArray uEncodeSymbol(QString resStr);//将utf8字符转换为\uXXXX格式
 
 #endif  // SERVERCONFIG_H
 

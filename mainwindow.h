@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 16:28:21
- * @LastEditTime: 2022-01-19 11:53:56
+ * @LastEditTime: 2022-01-19 18:36:23
  * @LastEditors: HK560
  * @Description: 
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\mainwindow.h
@@ -50,11 +50,11 @@ private slots:
 private:
     void init();    
     bool setConfigToGui();//读取config的climap配置到gui
-    bool setGuiToConfig(QMap<QString,QString> &cMap);
+    bool setGuiToConfig(QMap<QString,QString> &cMap);//读取gui设置到config
 
     Ui::MainWindow *ui;
     ServerConfig *config;
-    QFileInfo cfgFile;
-    QFileInfo exeCfgFile;
+    QFileInfo cfgFile;//cfg配置文件路径
+    QFileInfo exeCfgFile;//ini设置保存文件路径
 };
 #endif // MAINWINDOW_H

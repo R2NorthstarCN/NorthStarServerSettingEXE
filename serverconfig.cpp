@@ -1,10 +1,12 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 19:06:51
- * @LastEditTime: 2022-01-19 16:05:03
+ * @LastEditTime: 2022-01-19 18:40:51
  * @LastEditors: HK560
  * @Description:
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
+ * \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
+ * \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
  * \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
  */
 #include "serverconfig.h"
@@ -43,29 +45,34 @@ bool ServerConfig::writeToCfg() {
     configfile.setFileName(file.filePath());
     // configfile.setFileName("./test.cfg");
 
-
     qDebug() << configfile.fileName();
 
     if (configfile.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        configfile.write(QString("//EditByNorthStarServerConfigEXE\n").toUtf8());
+        configfile.write(
+            QString("//EditByNorthStarServerConfigEXE\n").toUtf8());
         for (auto i = cliMap.begin(); i != cliMap.end(); i++) {
             QString input;
             if (cliStringList.contains(i.key())) {
-                //is string
-                QString value=i.value();
-                input= QString("%1 \"%2\"\n").arg(i.key()).arg(QString(uEncodeSymbol(value)));
+                // is string
+                QString value = i.value();
+                input = QString("%1 \"%2\"\n")
+                            .arg(i.key())
+                            .arg(QString(uEncodeSymbol(value)));
                 qDebug() << "going to input:" << input;
             } else {
-                //is num
+                // is num
                 input = QString("%1 %2\n").arg(i.key()).arg(i.value());
                 qDebug() << "going to input:" << input;
             }
             Q_ASSERT(!input.isEmpty());
             configfile.write(input.toUtf8());
         }
-    }else{
-        qDebug()<<"cant open file:"<<configfile.fileName();
-        QMessageBox::warning(NULL,"错误",QString("无法打开%1\n写入配置失败！").arg(configfile.fileName()));
+        configfile.write(otherCli.toUtf8());
+    } else {
+        qDebug() << "cant open file:" << configfile.fileName();
+        QMessageBox::warning(
+            NULL, "错误",
+            QString("无法打开%1\n写入配置失败！").arg(configfile.fileName()));
     }
     return true;
 }
@@ -78,8 +85,8 @@ bool ServerConfig::readFromCfg() {
 
     QTextCodec *codec = QTextCodec::codecForName("UTF8");
     QRegExp rxCliName("(\\w+)");
-    QRegExp rxCliValue("(\"[\\S\\s]*\")|\\d+");
-
+    QRegExp rxCliValue("(\"[\\S\\s]*\")|[\\d|.]+");
+    otherCli.clear();
     QFile configfile;
     configfile.setFileName(file.filePath());
 
@@ -98,45 +105,62 @@ bool ServerConfig::readFromCfg() {
                 QString cliValue = rxCliValue.cap(0);
                 cliValue.replace(QRegExp("\""), "");
                 qDebug() << cliName << cliValue;
-                setConfigValue(cliName, cliValue);
+                if (!setConfigValue(cliName, cliValue)) {
+                    setOtherConfigValue(lineText);
+                };
             }
         }
 
-    } else{
+    } else {
         qDebug() << "打开失败";
-        QMessageBox::warning(NULL,"错误",QString("无法打开%1\n读取配置失败！").arg(configfile.fileName()));
-
+        QMessageBox::warning(
+            NULL, "错误",
+            QString("无法打开%1\n读取配置失败！").arg(configfile.fileName()));
     }
 
     return true;
 }
 
-bool ServerConfig::writeToSaveFile(QFileInfo file) { 
-    QSettings setting(file.fileName(),QSettings::IniFormat);
+bool ServerConfig::writeToSaveFile(QFileInfo file) {
+    QSettings setting(file.fileName(), QSettings::IniFormat);
     setting.setIniCodec("UTF8");
 
-    for(auto i=cliMap.begin();i!=cliMap.end();i++){
-        QString saveCliName=i.key();
-        QString saveCliValue=i.value();
-        setting.setValue(QString("ServerConfig/%1").arg(saveCliName),saveCliValue);
+    for (auto i = cliMap.begin(); i != cliMap.end(); i++) {
+        QString saveCliName = i.key();
+        QString saveCliValue = i.value();
+        setting.setValue(QString("ServerConfig/%1").arg(saveCliName),
+                         saveCliValue);
     }
-    QMessageBox::information(NULL,"提示",QString("保存成功!\n存储的文件在：%1").arg(file.fileName()));
+    setting.setValue("OtherConfig", otherCli);
+    QMessageBox::information(
+        NULL, "提示",
+        QString("保存成功!\n存储的文件在：%1").arg(file.fileName()));
 
-    return true; 
+    return true;
 }
 
-bool ServerConfig::readFromSaveFile(QFileInfo file) { 
-    QSettings setting(file.fileName(),QSettings::IniFormat);
+bool ServerConfig::readFromSaveFile(QFileInfo file) {
+    QFileInfo settingFile;
+    settingFile.setFile(file.fileName());
+    if (!settingFile.isFile()) {
+        QMessageBox::information(NULL, "错误",
+                                 "没有找到设置保存文件，请先保存设置一次！");
+        return false;
+    }
+    QSettings setting(file.fileName(), QSettings::IniFormat);
     setting.setIniCodec("UTF8");
-    for(auto i=cliMap.begin();i!=cliMap.end();i++){
-        QString saveCliName=i.key();
-        
-        cliMap[saveCliName]=setting.value(QString("ServerConfig/%1").arg(saveCliName)).toString();
+    for (auto i = cliMap.begin(); i != cliMap.end(); i++) {
+        QString saveCliName = i.key();
+
+        cliMap[saveCliName] =
+            setting.value(QString("ServerConfig/%1").arg(saveCliName))
+                .toString();
 
         // QString saveCliValue=i.value();
         // setting.setValue(QString("ServerConfig/%1").arg(saveCliName),saveCliValue);
     }
-    return true; 
+    otherCli = setting.value("OtherConfig").toString();
+    return true;
 }
 
 bool ServerConfig::setConfigValue(QString name, QString value) {
@@ -177,21 +201,22 @@ void ServerConfig::configReset() {
     cliMap["host_skip_client_dll_crc"] = "1";
 }
 
+void ServerConfig::setOtherConfigValue(QString text) {
+    if (!text.contains("EditByNorthStarServer")) {
+        otherCli.append(text);
+        otherCli.append("\n");
+    }
+}
 
-
-QByteArray uEncodeSymbol(QString resStr)
-{
-    // 如何把Unicode中文字符串以\u十六进制方式显示？
-    // 比如: 汉字中文显示成\u07a0\u045an\u02c8
-    // 解码思路如下： 先把unicode 转换成10进制 大于ascii码就进行转换
+QByteArray uEncodeSymbol(QString resStr) {
     QByteArray desStr;
-    foreach (QChar var, resStr)
-    {
-        if(var.unicode()>255){
-            QByteArray arr=QString::number(var.unicode(),16).insert(0,"\\u").toLatin1();
+    foreach (QChar var, resStr) {
+        if (var.unicode() > 255) {
+            QByteArray arr =
+                QString::number(var.unicode(), 16).insert(0, "\\u").toLatin1();
             desStr.append(arr);
-        }else{
-            desStr.append(var.unicode ());
+        } else {
+            desStr.append(var.unicode());
         }
     }
     return desStr;
