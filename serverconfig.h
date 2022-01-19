@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 19:06:51
- * @LastEditTime: 2022-01-18 13:35:51
+ * @LastEditTime: 2022-01-19 10:29:00
  * @LastEditors: HK560
  * @Description:
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.h
@@ -21,6 +21,7 @@
 class ServerConfig {
    public:
    ServerConfig();
+   
    QMap<QString,QString> cliMap;
    
    bool writeToCfg();//写入到autoexec_ns_server.cfg
@@ -29,6 +30,7 @@ class ServerConfig {
    bool readFromSaveFile(QFileInfo file);//读入到保存的配置文件
    bool setConfigValue(QString name,QString value);
    void setFilePath(QFileInfo path);
+   void configReset();
    // 写入配置文件的信息
    // QString ns_server_name="[CN]Server";//服务器名称
    // QString ns_server_desc="Welcome everyone";//服务器描述

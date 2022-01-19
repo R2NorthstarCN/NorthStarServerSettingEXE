@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 19:06:51
- * @LastEditTime: 2022-01-18 13:36:40
+ * @LastEditTime: 2022-01-19 10:37:59
  * @LastEditors: HK560
  * @Description: 
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
@@ -105,4 +105,29 @@ bool ServerConfig::setConfigValue(QString name, QString value)
 
 void ServerConfig::setFilePath(QFileInfo path){
     this->filePath=path;
+}
+
+void ServerConfig::configReset()
+{
+    qDebug()<<"configReset()";
+    cliMap["ns_server_name"]="[CN]ServerName";
+    cliMap["ns_server_desc"]="Welcome everyone";
+    cliMap["ns_server_password"]="";
+    cliMap["ns_report_server_to_masterserver"]="1";
+    cliMap["ns_report_sp_server_to_masterserver"]="0";
+    cliMap["ns_auth_allow_insecure"]="0";
+    cliMap["ns_erase_auth_info"]="1";
+    cliMap["ns_player_auth_port"]="8081";
+    cliMap["ns_masterserver_hostname"]="tf2cn.wolf109909.top";
+    cliMap["everything_unlocked"]="1";
+    cliMap["ns_should_return_to_lobby"]="1";
+    cliMap["net_chan_limit_mode"]="2";
+    cliMap["net_chan_limit_msec_per_sec"]="100";
+    cliMap["sv_querylimit_per_sec"]="15";
+    cliMap["base_tickinterval_mp"]="0.016667";
+    cliMap["sv_updaterate_mp"]="20";
+    // sv_minupdaterate unused
+    cliMap["sv_max_snapshots_multiplayer"]="300";
+    //net_data_block_enabled unused
+    cliMap["host_skip_client_dll_crc"]="1";
 }

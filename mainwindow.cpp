@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 16:28:21
- * @LastEditTime: 2022-01-19 10:23:27
+ * @LastEditTime: 2022-01-19 10:31:46
  * @LastEditors: HK560
  * @Description: 
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\mainwindow.cpp
@@ -123,5 +123,14 @@ void MainWindow::on_readNSconfigBtn_clicked()
 void MainWindow::on_applyToNSBtn_clicked()
 {
     setGuiToConfig(config->cliMap);
+}
+
+
+
+
+void MainWindow::on_resetBtn_clicked()
+{
+    config->configReset();
+    setConfigToGui();
 }
 
