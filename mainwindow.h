@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 16:28:21
- * @LastEditTime: 2022-01-18 12:50:44
+ * @LastEditTime: 2022-01-18 13:21:18
  * @LastEditors: HK560
  * @Description: 
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\mainwindow.h
@@ -34,9 +34,17 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+
+
+    void on_readNSconfigBtn_clicked();
+
+    void on_applyToNSBtn_clicked();
+
 private:
     void init();    
-    bool setConfigToGui();
+    bool setConfigToGui();//读取config的climap配置到gui
+    bool setGuiToConfig(QMap<QString,QString> &cMap);
 
     Ui::MainWindow *ui;
     ServerConfig *config;

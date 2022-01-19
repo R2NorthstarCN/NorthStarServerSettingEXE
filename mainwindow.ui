@@ -664,13 +664,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="applyBtn">
+   <widget class="QPushButton" name="applyToNSBtn">
     <property name="geometry">
      <rect>
       <x>470</x>
       <y>300</y>
-      <width>191</width>
-      <height>51</height>
+      <width>200</width>
+      <height>50</height>
      </rect>
     </property>
     <property name="text">
@@ -731,6 +731,19 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="readNSconfigBtn">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>260</y>
+      <width>200</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>读取目前北极星服务端配置</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

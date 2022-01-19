@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 19:06:51
- * @LastEditTime: 2022-01-18 12:14:16
+ * @LastEditTime: 2022-01-18 13:36:40
  * @LastEditors: HK560
  * @Description: 
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
@@ -32,15 +32,16 @@ ServerConfig::ServerConfig()
     cliMap.insert("host_skip_client_dll_crc","1");
 }
 
-bool ServerConfig::writeToCfg(QFileInfo file)
+bool ServerConfig::writeToCfg()
 {
     return true;
 }
 
-bool ServerConfig::readFromCfg(QFileInfo file)
+bool ServerConfig::readFromCfg()
 {   
     qDebug()<<"readFromcfg";
     
+    QFileInfo file=this->filePath;
     Q_ASSERT(file.isReadable());
     
     QTextCodec *codec = QTextCodec::codecForName("UTF8");
@@ -100,4 +101,8 @@ bool ServerConfig::setConfigValue(QString name, QString value)
         return  false;
     }
     return true;
+}
+
+void ServerConfig::setFilePath(QFileInfo path){
+    this->filePath=path;
 }
