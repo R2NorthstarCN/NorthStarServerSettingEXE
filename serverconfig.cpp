@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 19:06:51
- * @LastEditTime: 2022-01-19 11:29:01
+ * @LastEditTime: 2022-01-19 16:05:03
  * @LastEditors: HK560
  * @Description:
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
@@ -52,7 +52,8 @@ bool ServerConfig::writeToCfg() {
             QString input;
             if (cliStringList.contains(i.key())) {
                 //is string
-                input= QString("%1 \"%2\"\n").arg(i.key()).arg(i.value());
+                QString value=i.value();
+                input= QString("%1 \"%2\"\n").arg(i.key()).arg(QString(uEncodeSymbol(value)));
                 qDebug() << "going to input:" << input;
             } else {
                 //is num
@@ -62,8 +63,10 @@ bool ServerConfig::writeToCfg() {
             Q_ASSERT(!input.isEmpty());
             configfile.write(input.toUtf8());
         }
-    }else
+    }else{
         qDebug()<<"cant open file:"<<configfile.fileName();
+        QMessageBox::warning(NULL,"错误",QString("无法打开%1\n写入配置失败！").arg(configfile.fileName()));
+    }
     return true;
 }
 
@@ -99,8 +102,11 @@ bool ServerConfig::readFromCfg() {
             }
         }
 
-    } else
+    } else{
         qDebug() << "打开失败";
+        QMessageBox::warning(NULL,"错误",QString("无法打开%1\n读取配置失败！").arg(configfile.fileName()));
+
+    }
 
     return true;
 }
@@ -114,11 +120,24 @@ bool ServerConfig::writeToSaveFile(QFileInfo file) {
         QString saveCliValue=i.value();
         setting.setValue(QString("ServerConfig/%1").arg(saveCliName),saveCliValue);
     }
+    QMessageBox::information(NULL,"提示",QString("保存成功!\n存储的文件在：%1").arg(file.fileName()));
 
     return true; 
 }
 
-bool ServerConfig::readFromSaveFile(QFileInfo file) { return true; }
+bool ServerConfig::readFromSaveFile(QFileInfo file) { 
+    QSettings setting(file.fileName(),QSettings::IniFormat);
+    setting.setIniCodec("UTF8");
+    for(auto i=cliMap.begin();i!=cliMap.end();i++){
+        QString saveCliName=i.key();
+        
+        cliMap[saveCliName]=setting.value(QString("ServerConfig/%1").arg(saveCliName)).toString();
+
+        // QString saveCliValue=i.value();
+        // setting.setValue(QString("ServerConfig/%1").arg(saveCliName),saveCliValue);
+    }
+    return true; 
+}
 
 bool ServerConfig::setConfigValue(QString name, QString value) {
     qDebug() << "setConfigValue:"
@@ -156,4 +175,24 @@ void ServerConfig::configReset() {
     cliMap["sv_max_snapshots_multiplayer"] = "300";
     // net_data_block_enabled unused
     cliMap["host_skip_client_dll_crc"] = "1";
+}
+
+
+
+QByteArray uEncodeSymbol(QString resStr)
+{
+    // 如何把Unicode中文字符串以\u十六进制方式显示？
+    // 比如: 汉字中文显示成\u07a0\u045an\u02c8
+    // 解码思路如下： 先把unicode 转换成10进制 大于ascii码就进行转换
+    QByteArray desStr;
+    foreach (QChar var, resStr)
+    {
+        if(var.unicode()>255){
+            QByteArray arr=QString::number(var.unicode(),16).insert(0,"\\u").toLatin1();
+            desStr.append(arr);
+        }else{
+            desStr.append(var.unicode ());
+        }
+    }
+    return desStr;
 }

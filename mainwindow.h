@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 16:28:21
- * @LastEditTime: 2022-01-19 10:39:12
+ * @LastEditTime: 2022-01-19 11:53:56
  * @LastEditors: HK560
  * @Description: 
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\mainwindow.h
@@ -44,6 +44,8 @@ private slots:
     void on_resetBtn_clicked();
 
     void on_saveConfigBtn_clicked();
+
+    void on_loadConfigBtn_clicked();
 
 private:
     void init();    

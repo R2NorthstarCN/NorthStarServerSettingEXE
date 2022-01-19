@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 16:28:21
- * @LastEditTime: 2022-01-19 11:21:09
+ * @LastEditTime: 2022-01-19 16:08:55
  * @LastEditors: HK560
  * @Description: 
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\mainwindow.cpp
@@ -22,6 +22,8 @@ MainWindow::~MainWindow() { delete ui; }
 void MainWindow::init()
 {
     config = new ServerConfig;
+    exeCfgFile.setFile(NS_EXECONFIG_PATH);
+    cfgFile.setFile(NS_CONFIG_TEST_PATH);
 
     if (false) {//用于测试
         if (QFile("Titanfall2.exe").exists() == false) {
@@ -42,7 +44,6 @@ void MainWindow::init()
         }
     }
 
-    cfgFile.setFile(NS_CONFIG_TEST_PATH);
     if (!cfgFile.isFile()) {
         QMessageBox::warning(
             this, NS_SERVERCONFIG_TITLE "错误",
@@ -75,7 +76,7 @@ bool MainWindow::setConfigToGui()
     ui->netChanLimitModeSpinBox->setValue(cMap["net_chan_limit_mode"].toInt());
     ui->netChanLimitMsecSpinBox->setValue(cMap["net_chan_limit_msec_per_sec"].toInt());
     ui->svQuerylimitPerSecSpinBox->setValue(cMap["sv_querylimit_per_sec"].toInt());
-    ui->baseTickintervalMpSpinBox->setValue(cMap["base_tickinterval_mp"].toInt());
+    ui->baseTickintervalMpSpinBox->setValue(cMap["base_tickinterval_mp"].toDouble());
     ui->svUpdaterateMpSpinBox->setValue(cMap["sv_updaterate_mp"].toInt());
     // sv_minupdaterate unused
     ui->svMaxSnapshotsMultiplayerSpinBox->setValue(cMap["sv_max_snapshots_multiplayer"].toInt());
@@ -116,6 +117,7 @@ bool MainWindow::setGuiToConfig(QMap<QString,QString> &cMap)
 
 void MainWindow::on_readNSconfigBtn_clicked()
 {
+    config->readFromCfg();
    setConfigToGui();
 }
 
@@ -124,6 +126,10 @@ void MainWindow::on_applyToNSBtn_clicked()
 {
     setGuiToConfig(config->cliMap);
     config->writeToCfg();
+    config->readFromCfg();
+    setConfigToGui();
+    QMessageBox::information(NULL,"提示",QString("应用成功！"));
+
 }
 
 
@@ -138,7 +144,16 @@ void MainWindow::on_resetBtn_clicked()
 
 void MainWindow::on_saveConfigBtn_clicked()
 {
-    cfgFile.setFile(NS_EXECONFIG_PATH);
-    config->writeToSaveFile(cfgFile);
+    setGuiToConfig(config->cliMap);
+    config->writeToSaveFile(exeCfgFile);
+}
+
+
+void MainWindow::on_loadConfigBtn_clicked()
+{
+    config->readFromSaveFile(exeCfgFile);
+    setConfigToGui();
+    QMessageBox::information(NULL,"提示",QString("读取成功！"));
+
 }
 

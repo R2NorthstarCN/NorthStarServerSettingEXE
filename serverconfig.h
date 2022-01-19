@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 19:06:51
- * @LastEditTime: 2022-01-19 11:13:02
+ * @LastEditTime: 2022-01-19 15:55:57
  * @LastEditors: HK560
  * @Description:
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.h
@@ -19,6 +19,7 @@
 #include <QRegExp>
 #include<QMap>
 #include<QSettings>
+#include<QMessageBox>
 
 class ServerConfig {
    public:
@@ -89,7 +90,7 @@ const QStringList cliStringList={
       // "host_skip_client_dll_crc"
    };
 
-
+QByteArray uEncodeSymbol(QString resStr);
 
 #endif  // SERVERCONFIG_H
 
