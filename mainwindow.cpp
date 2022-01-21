@@ -24,12 +24,12 @@ MainWindow::~MainWindow() { delete ui; }
 void MainWindow::init() {
     config = new ServerConfig;
     exeCfgFile.setFile(NS_EXECONFIG_PATH);
-    cfgFile.setFile(NS_CONFIG_TEST_PATH);  // NS_CONFIG_TEST_PATH
+    cfgFile.setFile(NS_CONFIG_PATH);  // NS_CONFIG_TEST_PATH NS_CONFIG_PATH
 
-    if (false) {  //用于测试
+    if (true) {  //用于测试
         if (QFile("Titanfall2.exe").exists() == false) {
-            QMessageBox::warning(this, NS_SERVERCONFIG_TITLE "错误",
-                                 NS_SERVERCONFIG_INFO
+            QMessageBox::warning(this,  NS_SERVERCONFIG_TITLE"错误",
+
                                  "检测到没有运行在游戏根目录下\n请把本程序放在"
                                  "泰坦陨落2根目录下再运行！");
             qDebug() << "检测到没有运行在游戏根目录";
@@ -37,8 +37,8 @@ void MainWindow::init() {
         }
         if (QFile("NorthstarLauncher.exe").exists() == false) {
             QMessageBox::warning(
-                this, NS_SERVERCONFIG_TITLE "错误",
-                NS_SERVERCONFIG_INFO
+                this,  NS_SERVERCONFIG_TITLE"错误",
+
                 "没有检测到NorthStarLancher\n请确保已安装了北极星客户端！");
             qDebug() << "没有检测到NorthStarLancher";
             exit(0);

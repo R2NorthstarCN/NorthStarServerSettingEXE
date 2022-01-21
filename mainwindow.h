@@ -9,8 +9,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#define NS_SERVERCONFIG_INFO "NorthStarCN ServerConfig :\n"
-#define NS_SERVERCONFIG_TITLE "NorthStarCN ServerConfig \t"
+#define NS_SERVERCONFIG_INFO "NS ServerConfigEditor :\n" //NorthStar ServerConfig Editor
+#define NS_SERVERCONFIG_TITLE "NS ServerConfigEditor \t" //NorthStar ServerConfig Editor
 #define NS_CONFIG_PATH "./R2Northstar/mods/Northstar.CustomServers/mod/cfg/autoexec_ns_server.cfg"
 #define NS_CONFIG_TEST_PATH "autoexec_ns_server.cfg"
 #define NS_EXECONFIG_PATH "/NS_SERVER_CONFIG.ini"

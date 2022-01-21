@@ -27,6 +27,10 @@ msvc {
         QMAKE_CFLAGS += /utf-8
         QMAKE_CXXFLAGS += /utf-8
 }
+
+
+
+RC_FILE += ver.rc
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
@@ -34,3 +38,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     res.qrc
+
+DISTFILES += \
+    ver.rc
+
+RC_ICONS = "NS.ico"

@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>北极星服务端配置 By:HK560</string>
+   <string>NS ServerConfig Editor  北极星服务端配置 By:HK560</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_13">
