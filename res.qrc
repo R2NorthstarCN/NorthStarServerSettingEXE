@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file alias="avatar_hk560">image/avatar_hk560_big.jpg</file>
+        <file alias="avatar_nscn">image/R2NSCN.png</file>
+        <file alias="avatar_nscnEdit">image/R2NSCNEDIT.png</file>
+    </qresource>
+</RCC>

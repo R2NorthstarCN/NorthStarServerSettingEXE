@@ -14,6 +14,8 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
+    QIcon ico(":/icon/avatar_nscnEdit");
+    setWindowIcon(ico);
     init();  // important!!
 }
 
@@ -164,3 +166,11 @@ void MainWindow::on_loadConfigBtn_clicked() {
         QMessageBox::information(NULL, "提示", QString("读取成功！"));
     };
 }
+
+void MainWindow::on_aboutBtn_clicked()
+{
+//    QMessageBox::about(this,"关于","作者：HK560");
+    aboutNS ab;
+    ab.exec();
+}
+

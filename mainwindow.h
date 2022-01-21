@@ -21,7 +21,7 @@
 #include<QDebug>
 #include<QFileInfo>
 #include<QMessageBox>
-
+#include"aboutns.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -46,6 +46,8 @@ private slots:
     void on_saveConfigBtn_clicked();
 
     void on_loadConfigBtn_clicked();
+
+    void on_aboutBtn_clicked();
 
 private:
     void init();    
