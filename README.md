@@ -19,3 +19,8 @@
 3. 运行本程序设置即可
 
 ![](https://cdn.jsdelivr.net/gh/HK560/MyPicHub@master/res/pic/20220121181422.png)
+
+## TODO：
+- 实现自动检测新版本
+- 加入支持args和args_dedi文件支持
+- 加入更多设置项
