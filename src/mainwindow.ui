@@ -857,6 +857,13 @@ NSCN v1.4.0版本往后加入中文支持</string>
          </layout>
         </item>
         <item>
+         <widget class="QPushButton" name="checkoutUpdateBtn">
+          <property name="text">
+           <string>检查更新</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <spacer name="verticalSpacer_6">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
