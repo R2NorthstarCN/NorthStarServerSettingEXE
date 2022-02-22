@@ -90,6 +90,12 @@ const QStringList cliStringList={
       // "sv_max_snapshots_multiplayer",
       // "net_data_block_enabled",
       // "host_skip_client_dll_crc"
+
+      //v1.0.0 add
+      "ns_private_match_last_mode",
+      "ns_private_match_last_map",
+      "ns_disallowed_weapons",
+      "ns_disallowed_weapon_primary_replacement"
    };
 
 QByteArray uEncodeSymbol(QString resStr);//将utf8字符转换为\uXXXX格式

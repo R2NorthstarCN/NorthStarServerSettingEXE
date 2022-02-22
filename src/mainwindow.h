@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 16:28:21
- * @LastEditTime: 2022-02-21 16:34:30
+ * @LastEditTime: 2022-02-22 19:14:30
  * @LastEditors: HK560
  * @Description: 
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSettingEXE\src\mainwindow.h
@@ -23,7 +23,7 @@
 #include<QFileInfo>
 #include<QMessageBox>
 #include"aboutns.h"
-
+#include"cfgeditor.h"
 //网络相关头文件
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkRequest>
@@ -47,6 +47,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+protected:
+    void closeEvent(QCloseEvent* event);//重写关闭事件
 private slots:
 
 
@@ -66,6 +68,8 @@ private slots:
     void on_checkoutUpdateBtn_clicked();
 
     void replyFinished(QNetworkReply *reply);//处理网络请求槽函数
+    void on_cfgditortn_clicked();
+
 private:
     void init();    
     bool setConfigToGui();//读取config的climap配置到gui
@@ -79,7 +83,9 @@ private:
     ServerConfig *config;
     QFileInfo cfgFile;//cfg配置文件路径
     QFileInfo exeCfgFile;//ini设置保存文件路径
+    // CfgEditor cfgEditor;
     
+    void outputCfgTextToGUI(QMap<QString, QString> cMap);//输出config的内容到文本框
 
 };
 #endif // MAINWINDOW_H

@@ -1,10 +1,10 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 19:06:51
- * @LastEditTime: 2022-01-19 18:40:51
+ * @LastEditTime: 2022-02-22 17:57:35
  * @LastEditors: HK560
  * @Description:
- * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
+ * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSettingEXE\src\serverconfig.cpp
  * \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
  * \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
  * \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
@@ -32,6 +32,17 @@ ServerConfig::ServerConfig() {
     cliMap.insert("sv_max_snapshots_multiplayer", "300");
     cliMap.insert("net_data_block_enabled", "0");
     cliMap.insert("host_skip_client_dll_crc", "1");
+    
+    //v1.0.0 add
+    cliMap.insert("ns_private_match_only_host_can_change_settings","0");
+    cliMap.insert("ns_private_match_countdown_length","15");
+    cliMap.insert("ns_private_match_last_mode","tdm");
+    cliMap.insert("ns_private_match_last_map","mp_forwardbase_kodai");
+    cliMap.insert("ns_disallowed_weapons","");
+    cliMap.insert("ns_disallowed_weapon_primary_replacement","");
+    cliMap.insert("ns_should_log_unknown_clientcommands","1");
+    
+
 }
 
 bool ServerConfig::writeToCfg() {
@@ -51,6 +62,8 @@ bool ServerConfig::writeToCfg() {
         configfile.write(
             QString("//EditByNorthStarServerConfigEXE\n").toUtf8());
         for (auto i = cliMap.begin(); i != cliMap.end(); i++) {
+            if(i.value().isEmpty())
+                continue;
             QString input;
             if (cliStringList.contains(i.key())) {
                 // is string
@@ -199,6 +212,17 @@ void ServerConfig::configReset() {
     cliMap["sv_max_snapshots_multiplayer"] = "300";
     // net_data_block_enabled unused
     cliMap["host_skip_client_dll_crc"] = "1";
+
+    //v1.0.0 add
+    cliMap["ns_private_match_only_host_can_change_settings"] = "0";
+    cliMap["ns_private_match_countdown_length"] = "15";
+    cliMap["ns_private_match_last_mode"] = "tdm";
+    cliMap["ns_private_match_last_map"] = "mp_forwardbase_kodai";
+    cliMap["ns_disallowed_weapons"] = "";
+    cliMap["ns_disallowed_weapon_primary_replacement"] = "";
+    cliMap["ns_should_log_unknown_clientcommands"] = "1";
+
+    
 }
 
 void ServerConfig::setOtherConfigValue(QString text) {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.31911.260
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NorthStarServerSetting", "NorthStarServerSetting.vcxproj", "{AD461CDC-D97C-3E1E-9367-A8FEC0CC9D15}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NorthStarServerSetting", "NorthStarServerSetting.vcxproj", "{6C2BAD9D-85F6-3602-B0B8-6D2A90CA0A04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AD461CDC-D97C-3E1E-9367-A8FEC0CC9D15}.Debug|x64.ActiveCfg = Debug|x64
-		{AD461CDC-D97C-3E1E-9367-A8FEC0CC9D15}.Debug|x64.Build.0 = Debug|x64
-		{AD461CDC-D97C-3E1E-9367-A8FEC0CC9D15}.Release|x64.ActiveCfg = Release|x64
-		{AD461CDC-D97C-3E1E-9367-A8FEC0CC9D15}.Release|x64.Build.0 = Release|x64
+		{6C2BAD9D-85F6-3602-B0B8-6D2A90CA0A04}.Debug|x64.ActiveCfg = Debug|x64
+		{6C2BAD9D-85F6-3602-B0B8-6D2A90CA0A04}.Debug|x64.Build.0 = Debug|x64
+		{6C2BAD9D-85F6-3602-B0B8-6D2A90CA0A04}.Release|x64.ActiveCfg = Release|x64
+		{6C2BAD9D-85F6-3602-B0B8-6D2A90CA0A04}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {403C78DF-E051-493B-A347-560D15EC705D}
+		SolutionGuid = {BAA5F983-88B9-4FC9-8BC6-0B62AD6512BB}
 	EndGlobalSection
 EndGlobal

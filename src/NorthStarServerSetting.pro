@@ -11,17 +11,20 @@ CONFIG += c++11
 
 SOURCES += \
     aboutns.cpp \
+    cfgeditor.cpp \
     main.cpp \
     mainwindow.cpp \
     serverconfig.cpp
 
 HEADERS += \
     aboutns.h \
+    cfgeditor.h \
     mainwindow.h \
     serverconfig.h
 
 FORMS += \
     aboutns.ui \
+    cfgeditor.ui \
     mainwindow.ui
 
 msvc {
