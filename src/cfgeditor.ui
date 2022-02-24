@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1023</width>
-    <height>501</height>
+    <width>1015</width>
+    <height>461</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>编辑CFG</string>
+  </property>
+  <property name="toolTip">
+   <string notr="true"/>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -193,7 +196,7 @@ NSCN v1.4.0版本往后加入中文支持</string>
      <x>20</x>
      <y>170</y>
      <width>401</width>
-     <height>261</height>
+     <height>241</height>
     </rect>
    </property>
    <property name="title">
@@ -266,6 +269,9 @@ NSCN v1.4.0版本往后加入中文支持</string>
        <layout class="QHBoxLayout" name="horizontalLayout_12">
         <item>
          <widget class="QLabel" name="countdownLengthLabel">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置比赛开始倒计时长度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="text">
            <string>开始倒计时长度</string>
           </property>
@@ -285,7 +291,23 @@ NSCN v1.4.0版本往后加入中文支持</string>
          </spacer>
         </item>
         <item>
-         <widget class="QSpinBox" name="countdownLengthSpinBox"/>
+         <widget class="QSpinBox" name="countdownLengthSpinBox">
+          <property name="minimumSize">
+           <size>
+            <width>45</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;设置比赛开始倒计时长度&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="minimum">
+           <number>0</number>
+          </property>
+          <property name="maximum">
+           <number>999</number>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -293,6 +315,9 @@ NSCN v1.4.0版本往后加入中文支持</string>
        <layout class="QHBoxLayout" name="horizontalLayout_11">
         <item>
          <widget class="QLabel" name="onlyHostChangeSettingLabel">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果设置为0，所有玩家可以改变房间设置；如果设置为1，玩家只能改变地图和模式；如果设置为2，玩家不能改变房间任何设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="text">
            <string>只允许房主更改设置</string>
           </property>
@@ -312,88 +337,20 @@ NSCN v1.4.0版本往后加入中文支持</string>
          </spacer>
         </item>
         <item>
-         <widget class="QSpinBox" name="onlyHostChangeSettingSpinBox"/>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_15">
-        <item>
-         <widget class="QLabel" name="disallowedWeaponLabel">
-          <property name="text">
-           <string>禁用武器</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_9">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
+         <widget class="QSpinBox" name="onlyHostChangeSettingSpinBox">
+          <property name="minimumSize">
            <size>
-            <width>40</width>
-            <height>20</height>
+            <width>45</width>
+            <height>0</height>
            </size>
           </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="disallowedWeaponLineEdit"/>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_16">
-        <item>
-         <widget class="QLabel" name="weaponReplaceLabel">
-          <property name="text">
-           <string>禁用武器替换为</string>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;如果设置为0，所有玩家可以改变房间设置；如果设置为1，玩家只能改变地图和模式；如果设置为2，玩家不能改变房间任何设置。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="maximum">
+           <number>2</number>
           </property>
          </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_13">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="weaponReplaceLineEdit"/>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_14">
-        <item>
-         <widget class="QLabel" name="lastMapLabel">
-          <property name="text">
-           <string>房间最后地图</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer name="horizontalSpacer_12">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <widget class="QLineEdit" name="lastMapLineEdit"/>
         </item>
        </layout>
       </item>
@@ -401,6 +358,9 @@ NSCN v1.4.0版本往后加入中文支持</string>
        <layout class="QHBoxLayout" name="horizontalLayout_13">
         <item>
          <widget class="QLabel" name="lastModeLabel">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;启动房间后的游戏模式，模式名称查看&lt;span style=&quot; color:#0055ff;&quot;&gt;游戏模式名称列表&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="text">
            <string>房间最后游戏模式</string>
           </property>
@@ -420,7 +380,155 @@ NSCN v1.4.0版本往后加入中文支持</string>
          </spacer>
         </item>
         <item>
-         <widget class="QLineEdit" name="lastModeLineEdit"/>
+         <widget class="QLineEdit" name="lastModeLineEdit">
+          <property name="maximumSize">
+           <size>
+            <width>45</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;启动房间后的游戏模式，模式名称查看&lt;span style=&quot; color:#0055ff;&quot;&gt;游戏模式名称列表&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_14">
+        <item>
+         <widget class="QLabel" name="lastMapLabel">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;启动服务器房间后的地图，名称查看&lt;span style=&quot; color:#0055ff;&quot;&gt;多人地图名称列表&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>房间最后地图</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_12">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lastMapLineEdit">
+          <property name="maximumSize">
+           <size>
+            <width>93</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;启动服务器房间后的地图，名称查看&lt;span style=&quot; color:#0055ff;&quot;&gt;多人地图名称列表&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_15">
+        <item>
+         <widget class="QLabel" name="disallowedWeaponLabel">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;禁用武器列表，查看&lt;a href=&quot;https://r2northstar.gitbook.io/r2northstar-wiki/hosting-a-server-with-northstar/dedicated-server#weapons&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;武器名称列表&lt;/span&gt;&lt;/a&gt;进行设置，使用&amp;quot;,&amp;quot;隔开。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="toolTipDuration">
+           <number>-1</number>
+          </property>
+          <property name="statusTip">
+           <string>123</string>
+          </property>
+          <property name="whatsThis">
+           <string>3232</string>
+          </property>
+          <property name="text">
+           <string>禁用武器</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_9">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="disallowedWeaponLineEdit">
+          <property name="maximumSize">
+           <size>
+            <width>93</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;禁用武器列表，查看&lt;a href=&quot;https://r2northstar.gitbook.io/r2northstar-wiki/hosting-a-server-with-northstar/dedicated-server#weapons&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;武器名称列表&lt;/span&gt;&lt;/a&gt;进行设置，使用&amp;quot;,&amp;quot;隔开。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="toolTipDuration">
+           <number>-1</number>
+          </property>
+          <property name="statusTip">
+           <string>123</string>
+          </property>
+          <property name="whatsThis">
+           <string>3232</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_16">
+        <item>
+         <widget class="QLabel" name="weaponReplaceLabel">
+          <property name="toolTip">
+           <string>将禁用武器替换为设置的武器</string>
+          </property>
+          <property name="text">
+           <string>禁用武器替换为</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_13">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="weaponReplaceLineEdit">
+          <property name="maximumSize">
+           <size>
+            <width>93</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>将禁用武器替换为设置的武器</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -880,7 +988,7 @@ NSCN v1.4.0版本往后加入中文支持</string>
          <item>
           <widget class="QCheckBox" name="printUnknowCLiChkBox">
            <property name="toolTip">
-            <string>有些客户端会修改client.dll文件用于一些mod，跳过验证则允许修改过client.dll文件的客户端加入服务器</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;决定是否打印未知的控制台命令，如果你觉得烦可以关掉&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="text">
             <string>控制台打印未知命令</string>
@@ -963,6 +1071,36 @@ NSCN v1.4.0版本往后加入中文支持</string>
      <string>关闭</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QLabel" name="linkLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>420</y>
+     <width>281</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;
+
+&lt;head /&gt;
+
+&lt;body&gt;
+    &lt;p&gt;&lt;a
+            href=&quot;https://r2northstar.gitbook.io/r2northstar-wiki/hosting-a-server-with-northstar/dedicated-server#weapons&quot;&gt;&lt;span
+                style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;武器名称列表&lt;/span&gt;&lt;/a&gt;  
+        &lt;a
+            href=&quot;https://r2northstar.gitbook.io/r2northstar-wiki/hosting-a-server-with-northstar/dedicated-server#gamemodes&quot;&gt;&lt;span
+                style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;游戏模式名称列表&lt;/span&gt;&lt;/a&gt; 
+                &lt;a
+                href=&quot;https://r2northstar.gitbook.io/r2northstar-wiki/hosting-a-server-with-northstar/dedicated-server#vanilla-mp&quot;&gt;&lt;span
+                    style=&quot; text-decoration: underline; color:#007af4;&quot;&gt;多人地图名称列表&lt;/span&gt;&lt;/a&gt;         
+    &lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</string>
+   </property>
   </widget>
  </widget>
  <resources/>

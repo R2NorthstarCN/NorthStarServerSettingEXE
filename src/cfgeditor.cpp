@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-02-21 18:23:17
- * @LastEditTime: 2022-02-22 20:33:03
+ * @LastEditTime: 2022-02-23 11:56:03
  * @LastEditors: HK560
  * @Description: 
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSettingEXE\src\cfgeditor.cpp
@@ -16,6 +16,7 @@ CfgEditor::CfgEditor(QWidget *parent,ServerConfig* config) :
     ui->setupUi(this);
     this->config=config;
     setConfigToGui();
+    ui->linkLabel->setOpenExternalLinks(true);
 }
 
 CfgEditor::~CfgEditor()

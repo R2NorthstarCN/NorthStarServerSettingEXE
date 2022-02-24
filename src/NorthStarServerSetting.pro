@@ -11,6 +11,10 @@ CONFIG += c++11
 
 SOURCES += \
     aboutns.cpp \
+    argsconfig.cpp \
+    argsdediconfig.cpp \
+    argsdedieditor.cpp \
+    argseditor.cpp \
     cfgeditor.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -18,12 +22,19 @@ SOURCES += \
 
 HEADERS += \
     aboutns.h \
+    argsconfig.h \
+    argsdediconfig.h \
+    argsdedieditor.h \
+    argseditor.h \
     cfgeditor.h \
+    define.h \
     mainwindow.h \
     serverconfig.h
 
 FORMS += \
     aboutns.ui \
+    argsdedieditor.ui \
+    argseditor.ui \
     cfgeditor.ui \
     mainwindow.ui
 

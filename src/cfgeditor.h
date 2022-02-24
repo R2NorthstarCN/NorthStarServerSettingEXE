@@ -1,7 +1,7 @@
 /*
  * @Author: HK560
  * @Date: 2022-02-21 18:23:17
- * @LastEditTime: 2022-02-22 19:05:14
+ * @LastEditTime: 2022-02-23 16:04:21
  * @LastEditors: HK560
  * @Description: 
  * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSettingEXE\src\cfgeditor.h
@@ -18,6 +18,8 @@
 #include<QFileInfo>
 #include<QMessageBox>
 #include"aboutns.h"
+#include"define.h"
+
 namespace Ui {
 class CfgEditor;
 }

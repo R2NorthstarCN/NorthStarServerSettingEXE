@@ -1,10 +1,10 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 19:06:51
- * @LastEditTime: 2022-01-19 17:12:40
+ * @LastEditTime: 2022-02-24 16:50:50
  * @LastEditors: HK560
  * @Description:
- * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.h
+ * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSettingEXE\src\serverconfig.h
  * \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.h
  */
 #ifndef SERVERCONFIG_H
@@ -13,13 +13,14 @@
 #include<QVector>
 #include<QFileInfo>
 #include<QStringList>
-#include<qDebug>
+#include<QDebug>
 #include<QTextCodec>
 #include <QRegularExpression>
 #include <QRegExp>
 #include<QMap>
 #include<QSettings>
 #include<QMessageBox>
+#include"define.h"
 
 class ServerConfig {
    public:

@@ -1,5 +1,13 @@
 /*
  * @Author: HK560
+ * @Date: 2022-02-21 12:45:00
+ * @LastEditTime: 2022-02-24 16:45:26
+ * @LastEditors: HK560
+ * @Description: 
+ * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSettingEXE\src\mainwindow.cpp
+ */
+/*
+ * @Author: HK560
  * @Date: 2022-01-14 16:28:21
  * @LastEditTime: 2022-02-22 20:31:03
  * @LastEditors: HK560
@@ -29,8 +37,16 @@ void MainWindow::closeEvent(QCloseEvent* event){
 
 void MainWindow::init() {
     config = new ServerConfig;
+    argsConfig=new ArgsConfig;
+    argsDediConfig=new ArgsDediConfig;
+
+
     exeCfgFile.setFile(NS_EXECONFIG_PATH);
     cfgFile.setFile(NS_CONFIG_TEST_PATH);  // NS_CONFIG_TEST_PATH NS_CONFIG_PATH
+    argsFile.setFile(NS_CONFIG_ARGS_PATH);
+    argsDediFile.setFile(NS_CONFIG_ARGS_DEDI_PATH);
+
+
 
     if (false) {  //用于测试
         if (QFile("Titanfall2.exe").exists() == false) {
@@ -49,8 +65,9 @@ void MainWindow::init() {
             qDebug() << "没有检测到NorthStarLancher";
             exit(0);
         }
+        
     }
-
+    //checkFile
     if (!cfgFile.isFile()) {
         QMessageBox::warning(
             this, NS_SERVERCONFIG_TITLE "错误",
@@ -60,6 +77,27 @@ void MainWindow::init() {
         exit(0);
     }
     qDebug() << "成功找到autoexec_ns_server.cfg";
+
+    if (!argsFile.isFile()) {
+        QMessageBox::warning(
+            this, NS_SERVERCONFIG_TITLE "错误",
+            NS_SERVERCONFIG_INFO
+            "没有找到ns_startup_args.txt文件\n请确保正确安装了北极星客户端");
+        qDebug() << "找不到ns_startup_args";
+        exit(0);
+    }
+    qDebug() << "成功找到ns_startup_args";
+
+    if (!argsDediFile.isFile()) {
+        QMessageBox::warning(
+            this, NS_SERVERCONFIG_TITLE "错误",
+            NS_SERVERCONFIG_INFO
+            "没有找到ns_startup_args_dedi.txt文件\n请确保正确安装了北极星客户端");
+        qDebug() << "找不到ns_startup_args_dedi.txt";
+        exit(0);
+    }
+    qDebug() << "成功找到ns_startup_args_dedi.txt";
+
     config->setFilePath(cfgFile);
     config->readFromCfg();
     // cfgEditor=new CfgEditor();
@@ -303,5 +341,19 @@ void MainWindow::on_cfgditortn_clicked()
     // cfgEditor.setSConfig(config);
     cfgEditor.exec();
     setConfigToGui();
+}
+
+
+void MainWindow::on_argsBtn_clicked()
+{
+
+}
+
+
+
+
+void MainWindow::on_argsDediBtn_clicked()
+{
+
 }
 
