@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>691</width>
-    <height>393</height>
+    <width>722</width>
+    <height>390</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,7 +31,7 @@
     <rect>
      <x>50</x>
      <y>30</y>
-     <width>591</width>
+     <width>631</width>
      <height>24</height>
     </rect>
    </property>
@@ -41,7 +41,7 @@
     <rect>
      <x>270</x>
      <y>80</y>
-     <width>371</width>
+     <width>421</width>
      <height>291</height>
     </rect>
    </property>
@@ -55,6 +55,9 @@
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
          <widget class="QCheckBox" name="maxplayerChk">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;max_players 设定房间最大玩家数，目前最多支持64人&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="text">
            <string>最大玩家数</string>
           </property>
@@ -68,6 +71,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;max_players 设定房间最大玩家数，目前最多支持64人&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
          </widget>
         </item>
        </layout>
@@ -76,6 +82,9 @@
        <layout class="QHBoxLayout" name="horizontalLayout_5">
         <item>
          <widget class="QCheckBox" name="airAccelChk">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;custom_air_accel_pilot 设定铁驭的空中转向加速&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="text">
            <string>铁驭空中加速</string>
           </property>
@@ -89,6 +98,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;custom_air_accel_pilot 设定铁驭的空中转向加速&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
          </widget>
         </item>
        </layout>
@@ -97,8 +109,11 @@
        <layout class="QHBoxLayout" name="horizontalLayout_9">
         <item>
          <widget class="QCheckBox" name="timelimitChk">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timelimit &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="text">
-           <string>时间限制</string>
+           <string>每局时间限制</string>
           </property>
          </widget>
         </item>
@@ -110,6 +125,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;timelimit &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
          </widget>
         </item>
        </layout>
@@ -118,8 +136,11 @@
        <layout class="QHBoxLayout" name="horizontalLayout_10">
         <item>
          <widget class="QCheckBox" name="scorelimitChk">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;scorelimit &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="text">
-           <string>分数限制</string>
+           <string>每局分数限制</string>
           </property>
          </widget>
         </item>
@@ -131,26 +152,8 @@
             <height>16777215</height>
            </size>
           </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_7">
-        <item>
-         <widget class="QCheckBox" name="respawnDelayChk">
-          <property name="text">
-           <string>重生延迟时间</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QSpinBox" name="respawnDelayEdit">
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>16777215</height>
-           </size>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;scorelimit &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
@@ -160,6 +163,9 @@
        <layout class="QHBoxLayout" name="horizontalLayout_11">
         <item>
          <widget class="QCheckBox" name="roundscorelimitChk">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;roundscorelimit 适用于某些模式&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="text">
            <string>回合分数限制</string>
           </property>
@@ -173,6 +179,63 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;roundscorelimit 适用于某些模式&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_12">
+        <item>
+         <widget class="QCheckBox" name="roundtimelimitChk">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;roundtimelimit &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>回合时间限制</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="roundtimelimitEdit">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;roundtimelimit &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QCheckBox" name="respawnDelayChk">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;respawn_delay &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>重生延迟时间</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QSpinBox" name="respawnDelayEdit">
+          <property name="maximumSize">
+           <size>
+            <width>50</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;respawn_delay &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
          </widget>
         </item>
        </layout>
@@ -181,6 +244,9 @@
        <layout class="QHBoxLayout" name="horizontalLayout_6">
         <item>
          <widget class="QCheckBox" name="healthmultiplierChk">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;pilot_health_multiplier &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
           <property name="text">
            <string>铁驭生命值倍数</string>
           </property>
@@ -194,26 +260,8 @@
             <height>16777215</height>
            </size>
           </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_12">
-        <item>
-         <widget class="QCheckBox" name="roundtimelimitChk">
-          <property name="text">
-           <string>回合时间限制</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QSpinBox" name="roundtimelimitEdit">
-          <property name="maximumSize">
-           <size>
-            <width>50</width>
-            <height>16777215</height>
-           </size>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;pilot_health_multiplier &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
@@ -232,6 +280,9 @@
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
        <widget class="QCheckBox" name="disableBoostChk">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;boosts_enabled 1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="text">
          <string>禁用强化</string>
         </property>
@@ -239,6 +290,9 @@
       </item>
       <item>
        <widget class="QCheckBox" name="disableEscapeShipChk">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;run_epilogue 0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="text">
          <string>禁用撤离舰</string>
         </property>
@@ -246,6 +300,9 @@
       </item>
       <item>
        <widget class="QCheckBox" name="disableOutboundCHK">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;oob_timer_enabled 0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="text">
          <string>禁用出界计时器</string>
         </property>
@@ -253,6 +310,9 @@
       </item>
       <item>
        <widget class="QCheckBox" name="disableClassicmpChk">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;classic_mp 0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="text">
          <string>禁用开局运输船降落</string>
         </property>
@@ -260,6 +320,9 @@
       </item>
       <item>
        <widget class="QCheckBox" name="enableAegisTitanCHk">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;aegis_upgrades 1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="text">
          <string>启用神盾泰坦</string>
         </property>
@@ -267,6 +330,9 @@
       </item>
       <item>
        <widget class="QCheckBox" name="enableShieldRegenChk">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;titan_shield_regen 1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="text">
          <string>启用泰坦护盾再生</string>
         </property>
@@ -274,6 +340,9 @@
       </item>
       <item>
        <widget class="QCheckBox" name="enableFPembarkChk">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;fp_embark_enabled 1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="text">
          <string>启用第一人称处决和上机</string>
         </property>
@@ -299,11 +368,20 @@
   <widget class="QCheckBox" name="overwriteplaylistChk">
    <property name="geometry">
     <rect>
-     <x>270</x>
+     <x>280</x>
      <y>60</y>
-     <width>101</width>
+     <width>121</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;+setplaylistvaroverrides 使用该参数来覆写游戏列表设定的默认参数，勾选该选项后，会读取下面的组的选项&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="text">
     <string>覆写游戏列表</string>
@@ -313,20 +391,26 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>230</y>
+     <y>240</y>
      <width>201</width>
      <height>24</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;其他参数请在这里输入&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>210</y>
+     <y>220</y>
      <width>61</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;其他参数请在这里输入&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="text">
     <string>其他参数：</string>
@@ -358,29 +442,51 @@
     <string>取消</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>50</x>
      <y>70</y>
      <width>201</width>
-     <height>111</height>
+     <height>139</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_3">
       <item>
-       <widget class="QCheckBox" name="checkBox_3">
+       <widget class="QCheckBox" name="playlistChk">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;+setplaylist 设置服务器游戏列表，目前只能设置为private_match使服务器正常工作&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="text">
          <string>游戏列表</string>
         </property>
        </widget>
       </item>
       <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
        <widget class="QLineEdit" name="playlistEdit">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;+setplaylist 设置服务器游戏列表，目前只能设置为private_match使服务器正常工作&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="text">
          <string>private_match</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -389,7 +495,10 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QCheckBox" name="checkBox">
+       <widget class="QCheckBox" name="portChk">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;-port 设置服务器使用哪个UDP端口进行通信&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="text">
          <string>UDP端口</string>
         </property>
@@ -403,6 +512,15 @@
           <height>16777215</height>
          </size>
         </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;-port 设置服务器使用哪个UDP端口进行通信&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="minimum">
+         <number>1</number>
+        </property>
+        <property name="maximum">
+         <number>65535</number>
+        </property>
        </widget>
       </item>
      </layout>
@@ -410,7 +528,10 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QCheckBox" name="checkBox_2">
+       <widget class="QCheckBox" name="gamemodeChk">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;+mp_gamemode 强制服务器使用设置的游戏模式&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
         <property name="text">
          <string>游戏模式</string>
         </property>
@@ -424,18 +545,47 @@
           <height>16777215</height>
          </size>
         </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;+mp_gamemode 强制服务器使用设置的游戏模式&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
        </widget>
       </item>
      </layout>
     </item>
     <item>
      <widget class="QCheckBox" name="maxplayersplaylistChkbox">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;-maxplayersplaylist 允许覆写游戏列表时覆写最大玩家数&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
       <property name="text">
        <string>关闭游戏列表最大玩家数限制</string>
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QCheckBox" name="maxplayersplaylistChkbox_2">
+      <property name="toolTip">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;-softwared3d11 部分服务器没有独立的GPU, 这种情况下可以使用该参数来强制服务器使用CPU来运行DirectX&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="text">
+       <string>强制非硬件运行DriectX</string>
+      </property>
+     </widget>
+    </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="linkLabel">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>280</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://r2northstar.gitbook.io/r2northstar-wiki/hosting-a-server-with-northstar/dedicated-server#startup-arguments&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;更多参数列表&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
   </widget>
  </widget>
  <resources/>

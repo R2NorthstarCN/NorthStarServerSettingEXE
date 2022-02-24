@@ -1,10 +1,10 @@
 /*
  * @Author: HK560
  * @Date: 2022-02-21 12:45:00
- * @LastEditTime: 2022-02-24 16:45:26
+ * @LastEditTime: 2022-02-24 18:50:51
  * @LastEditors: HK560
  * @Description: 
- * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSettingEXE\src\mainwindow.cpp
+ * @FilePath: \NorthStarCN_WIKId:\github\ttf\NorthStarServerSettingEXE\src\mainwindow.cpp
  */
 /*
  * @Author: HK560
@@ -98,8 +98,16 @@ void MainWindow::init() {
     }
     qDebug() << "成功找到ns_startup_args_dedi.txt";
 
+
     config->setFilePath(cfgFile);
     config->readFromCfg();
+
+    argsConfig->setFilePath(argsFile);
+    // argsConfig->readFromArgs();
+
+    argsDediConfig->setFilePath(argsDediFile);
+    // argsDediConfig->readFromArgs();
+
     // cfgEditor=new CfgEditor();
     setConfigToGui();
     // cfgEditor.setConfigToGui();
@@ -163,6 +171,9 @@ bool MainWindow::setConfigToGui() {
     // ui->otherCliEdit->setText(config->otherCli);
 
     outputCfgTextToGUI(cMap);
+
+    //args
+    //argsDedi
     return true;
 }
 
@@ -346,7 +357,9 @@ void MainWindow::on_cfgditortn_clicked()
 
 void MainWindow::on_argsBtn_clicked()
 {
-
+    ArgsEditor argsEditor;
+    argsEditor.exec();
+    setConfigToGui();
 }
 
 
@@ -354,6 +367,9 @@ void MainWindow::on_argsBtn_clicked()
 
 void MainWindow::on_argsDediBtn_clicked()
 {
+    ArgsDediEditor argsDediEditor;
+    argsDediEditor.exec();
+    setConfigToGui();
 
 }
 

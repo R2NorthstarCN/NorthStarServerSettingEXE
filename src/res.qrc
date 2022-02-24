@@ -4,4 +4,7 @@
         <file alias="avatar_nscn">image/R2NSCN.png</file>
         <file alias="avatar_nscnEdit">image/R2NSCNEDIT.png</file>
     </qresource>
+    <qresource prefix="/qt">
+        <file>etc/qt.conf</file>
+    </qresource>
 </RCC>

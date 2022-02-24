@@ -1,10 +1,10 @@
 /*
  * @Author: HK560
  * @Date: 2022-01-14 19:06:51
- * @LastEditTime: 2022-02-22 17:57:35
+ * @LastEditTime: 2022-02-24 19:34:48
  * @LastEditors: HK560
  * @Description:
- * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSettingEXE\src\serverconfig.cpp
+ * @FilePath: \NorthStarCN_WIKId:\github\ttf\NorthStarServerSettingEXE\src\serverconfig.cpp
  * \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
  * \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
  * \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSetting\serverconfig.cpp
@@ -50,7 +50,7 @@ bool ServerConfig::writeToCfg() {
     QFileInfo file = this->filePath;
     Q_ASSERT(file.isReadable());
 
-    QTextCodec *codec = QTextCodec::codecForName("UTF8");
+    // QTextCodec *codec = QTextCodec::codecForName("UTF8");
 
     QFile configfile;
     configfile.setFileName(file.filePath());

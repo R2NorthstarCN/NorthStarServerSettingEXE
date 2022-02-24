@@ -120,7 +120,7 @@
      <rect>
       <x>820</x>
       <y>100</y>
-      <width>160</width>
+      <width>161</width>
       <height>341</height>
      </rect>
     </property>
@@ -580,7 +580,11 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="argsLineEdit"/>
+           <widget class="QLineEdit" name="argsLineEdit">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout">
@@ -667,7 +671,11 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="argsDediLineEdit"/>
+           <widget class="QLineEdit" name="argsDediLineEdit">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -720,7 +728,7 @@
      <x>0</x>
      <y>0</y>
      <width>1000</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
