@@ -1,10 +1,10 @@
 /*
  * @Author: HK560
  * @Date: 2022-02-21 12:45:00
- * @LastEditTime: 2022-02-24 18:50:51
+ * @LastEditTime: 2022-02-25 16:45:54
  * @LastEditors: HK560
  * @Description: 
- * @FilePath: \NorthStarCN_WIKId:\github\ttf\NorthStarServerSettingEXE\src\mainwindow.cpp
+ * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSettingEXE\src\mainwindow.cpp
  */
 /*
  * @Author: HK560
@@ -367,7 +367,7 @@ void MainWindow::on_argsBtn_clicked()
 
 void MainWindow::on_argsDediBtn_clicked()
 {
-    ArgsDediEditor argsDediEditor;
+    ArgsDediEditor argsDediEditor(this,argsDediConfig);
     argsDediEditor.exec();
     setConfigToGui();
 

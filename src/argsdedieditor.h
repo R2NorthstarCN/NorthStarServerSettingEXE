@@ -18,6 +18,7 @@ public:
 
 private:
     Ui::ArgsDediEditor *ui;
+    ArgsDediConfig *argsDediConfig;
 };
 
 #endif // ARGSDEDIEDITOR_H

@@ -23,6 +23,11 @@ bool ArgsConfig::readFromArgs()
 {
     qDebug() << "readFromArgs";
 
+    QFileInfo file = this->filePath;
+    Q_ASSERT(file.isReadable());
+
+    otherCli.clear();
+
     return true;
 }
 

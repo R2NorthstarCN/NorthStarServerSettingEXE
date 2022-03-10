@@ -1,0 +1,1 @@
++mp_gamemode tdm +setplaylistvaroverrides "private_matchda dsa dss"  +mp_gamemode "ds" +mp_gamemode -port 2222

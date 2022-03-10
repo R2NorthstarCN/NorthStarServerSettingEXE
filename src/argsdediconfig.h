@@ -1,3 +1,11 @@
+/*
+ * @Author: HK560
+ * @Date: 2022-02-25 16:02:05
+ * @LastEditTime: 2022-02-25 17:24:50
+ * @LastEditors: HK560
+ * @Description: 
+ * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSettingEXE\src\argsdediconfig.h
+ */
 #ifndef ARGSDEDICONFIG_H
 #define ARGSDEDICONFIG_H
 #include<QString>
@@ -20,6 +28,8 @@ public:
 
     QString otherArgs;
     QMap<QString,QString> argsMap;
+    QMap<QString,bool> argsSetMap;
+
 
     bool writeToArgs();
     bool readFromArgs();
@@ -30,6 +40,14 @@ public:
     void argsReset();//恢复默认设置
     void setOtherArgsValue(QString text);//设置其他参数
     
+    QStringList argsNameList{
+        "+setplaylist",
+        "-port",
+        "+mp_gamemode",
+        "-maxplayersplaylist",
+        "+setplaylistvaroverrides",
+    };
+
 private:
    QFileInfo filePath;//cfg文件路径
 };

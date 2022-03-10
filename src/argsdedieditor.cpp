@@ -1,5 +1,13 @@
 /*
  * @Author: HK560
+ * @Date: 2022-02-25 16:02:05
+ * @LastEditTime: 2022-02-25 16:49:09
+ * @LastEditors: HK560
+ * @Description: 
+ * @FilePath: \NorthStarCN_WIKIh:\github\ttf\NorthStarServerSettingEXE\src\argsdedieditor.cpp
+ */
+/*
+ * @Author: HK560
  * @Date: 2022-02-24 18:03:48
  * @LastEditTime: 2022-02-24 18:56:32
  * @LastEditors: HK560
@@ -15,6 +23,8 @@ ArgsDediEditor::ArgsDediEditor(QWidget *parent,ArgsDediConfig *argsDediConfig) :
 {
     ui->setupUi(this);
     ui->linkLabel->setOpenExternalLinks(true);
+    this->argsDediConfig=argsDediConfig;
+    argsDediConfig->readFromArgs();
 }
 
 ArgsDediEditor::~ArgsDediEditor()
